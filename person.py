@@ -1,9 +1,5 @@
 class Person:
-    counter = 0
-    
     def __init__(self, name :str, surname :str):
-        Person.counter += 1
-        self.id = Person.counter
         self.name = name
         self.surname = surname
         
@@ -12,9 +8,15 @@ class Person:
        
 # childs
 class Student(Person):
+    counter = 0
     def __init__(self, name, surname):
         super().__init__(name, surname)
+        Student.counter += 1
+        self.id = Student.counter
     
 class Teacher(Person):
+    counter = 0
     def __init__(self, name, surname):
         super().__init__(name, surname)
+        Teacher.counter += 1
+        self.id = Teacher.counter
